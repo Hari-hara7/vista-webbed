@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Art</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Transparent Black Background */
+       /* Transparent Black Background */
+       body {
+            background: rgba(0, 0, 0, 0.9); /* Pure black with 90% transparency */
+            color: white;
+           
+        }
+
+        /* Mouse Glow Effect */
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, rgba(0, 0, 0, 0) 80%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Hover Effect for Glowing */
+        .glow-effect:hover {
+            position: relative;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(30, 30, 30, 0.9); /* Slightly transparent black */
+            padding: 1rem;
+            display: flex;
+            justify-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        /* Rainbow Hover Effect */
+        .rainbow-hover {
+            background-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 5s linear infinite;
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(45deg, orange, purple, pink);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hover Glow Effect */
+        .glow-effect:hover::before {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* Purchase Button */
+        .purchase-btn {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: white;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .purchase-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Right Corner Logo */
+        .logo-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full top-0 z-10">
+        <img src="logo.png" alt="Logo" class="w-20">
+        <button class="bg-green-500 px-4 py-2 rounded-md">Action</button>
+    </nav>
+
+
+
+
+<!-- Main Section -->
+<section class="glow-effect flex flex-col justify-center min-h-screen p-10 relative">
+
+    <!-- Logo and Purchase Now Button -->
+    <img src="logo.png" alt="Logo" class="absolute top-5 left-5 w-24 h-24">
+    <a href="#" class="absolute top-5 right-5 bg-white text-black py-2 px-4 rounded-md text-lg">Purchase Now</a>
+
+    <div class="grid grid-cols-2 gap-10">
+        <!-- Left Side Content (Now the "Transform Your Website") -->
+        <div class="text-left">
+            <h2 class="text-3xl font-bold gradient-text">Transform Your Website</h2>
+            <p class="text-white mt-2">With Motion Art Effect</p>
+        </div>
+
+        <!-- Right Side Content (Now the "Attract Your Visitors Attention With Colorful") -->
+        <div class="flex flex-col justify-center items-start ml-20">
+            <h1 class="text-4xl font-bold rainbow-hover">Attract Your Visitors Attention With Colorful</h1>
+            <h2 class="gradient-text text-xl mt-4">Motion Art Effect</h2>
+            <p class="text-white mt-2">Unleash the power of creativity with Motion Art for Elementor - your ultimate solution for seamlessly integrating captivating animations into your website.</p>
+           
+        </div>
+
+        
+        <p class="text-white ml-2 text-center mx-auto">Trusted by thousands of users around the world</p>
+    </div>
+
+</section>
+
+
+
+<section class="flex justify-center items-center gap-10 p-10 flex-wrap">
+    <!-- Image 1 -->
+    <div class="text-center space-y-4">
+        <img src="motionarteffect-img2.png" alt="Main Image" class="w-48">
+        <img src="motionarteffect-img4.png" alt="Main Image" class="w-48">
+        <p class="text-white mt-2">Description for Main Image</p>
+    </div>
+
+    <!-- Image 2 -->
+    <div class="text-center space-y-4">
+        <img src="motionarteffect-img1.png" alt="Image 2" class="w-32">
+        <img src="motionarteffect-img4.png" alt="Main Image" class="w-48">
+        <p class="text-white mt-2">Description for Image 2</p>
+    </div>
+
+    <!-- Image 3 -->
+    <div class="text-center space-y-4">
+        <img src="motionarteffect-img3.png" alt="Image 3" class="w-32">
+        <img src="motionarteffect-img4.png" alt="Main Image" class="w-48">
+        <p class="text-white mt-2">Description for Image 3</p>
+    </div>
+</section>
+
+
+<!-- Section with Text and Image -->
+<!-- Section with Text and Image -->
+<section class="flex flex-col lg:flex-row justify-center items-center p-10 space-y-6 lg:space-y-0 lg:space-x-10 bg-black rounded-lg shadow-lg">
+    <!-- Text Content -->
+    <div class="text-center lg:text-left max-w-lg text-white">
+        <h2 class="text-4xl font-semibold leading-tight">Turn Your Cursor Into A Colorful Magic Wand & Charm Your Visitors</h2>
+        <p class="mt-4 text-lg text-gray-300">Motion Art for Elementor is a groundbreaking plugin that empowers you to effortlessly infuse your website with visually stunning motion art elements.</p>
+        <button class="mt-6 px-6 py-3 bg-gradient-to-r from-orange-500 to-purple-600 text-white font-semibold rounded-full shadow-lg transition-transform transform hover:scale-105">
+            Get Started <span class="ml-3">➡</span>
+        </button>
+    </div>
+
+    <!-- Image Content -->
+    <div class="w-48 lg:w-60">
+        <img src="motionarteffect-img5.png" alt="Magic Wand" class="w-full h-auto rounded-lg shadow-xl transition-transform transform hover:scale-105">
+    </div>
+</section>
+
+
+
+
+<!-- Apply On Any Section -->
+<section class="text-center p-10 bg-black text-white">
+    <!-- Main Heading -->
+    <h2 class=" text-white text-4xl font-bold text-gradient bg-clip-text text-transparent mt-4">
+        Apply On Any Section Or Enable For Whole Page
+    </h2>
+
+  <!-- Cards Section -->
+<div class="flex justify-center gap-10 mt-10">
+    <!-- Card 1 -->
+    <div class="card-transparent w-80 p-8 bg-black bg-opacity-60 rounded-xl border-2 border-white shadow-lg hover:shadow-2xl hover:scale-105 hover:brightness-125 transition-all duration-300">
+        <h3 class="text-2xl font-semibold text-white">Feature 1</h3>
+        <p class="text-gray-100 mt-2">Some description about feature 1.</p>
+        <button class="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-5 py-2 rounded-full mt-4 flex items-center justify-center space-x-2 hover:scale-105 transition-transform">
+            <span>Learn More</span>
+            <!-- Lock Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11V7a4 4 0 118 0v4M6 11V7a4 4 0 118 0v4m-8 4v4a4 4 0 008 0v-4m-8 0H4a2 2 0 00-2 2v2a2 2 0 002 2h12a2 2 0 002-2v-2a2 2 0 00-2-2h-4"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-transparent w-80 p-8 bg-black bg-opacity-60 rounded-xl border-2 border-white shadow-lg hover:shadow-2xl hover:scale-105 hover:brightness-125 transition-all duration-300">
+        <h3 class="text-2xl font-semibold text-white">Feature 2</h3>
+        <p class="text-gray-100 mt-2">Some description about feature 2.</p>
+        <button class="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-5 py-2 rounded-full mt-4 flex items-center justify-center space-x-2 hover:scale-105 transition-transform">
+            <span>Learn More</span>
+            <!-- Lock Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11V7a4 4 0 118 0v4M6 11V7a4 4 0 118 0v4m-8 4v4a4 4 0 008 0v-4m-8 0H4a2 2 0 00-2 2v2a2 2 0 002 2h12a2 2 0 002-2v-2a2 2 0 00-2-2h-4"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+
+</section>
+
+
+
+  <!-- Browser Support Section -->
+<section class="text-center p-10 bg-black">
+    <div class="card-transparent mx-auto w-80 mb-8">
+        <h3 class="text-3xl font-bold text-white">Supported by All Popular Browsers</h3>
+        <p class="text-gray-400 mt-2">Rest assured, Motion Art is designed to be compatible with all major web browsers.</p>
+    </div>
+
+    <!-- Image Row -->
+    <div class="flex justify-center gap-10 mt-8">
+        <!-- Image 1 -->
+        <img src="chrome-logo.png" alt="Chrome" class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-all duration-300">
+
+        <!-- Image 2 -->
+        <img src="firefox-logo.png" alt="Firefox" class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-all duration-300">
+
+        <!-- Image 3 -->
+        <img src="safari-logo.png" alt="Safari" class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-all duration-300">
+    </div>
+</section>
+
+<!-- All-Round Plugin Section -->
+<section class="text-center p-10 bg-black">
+    <!-- Main Heading -->
+    <div class="mb-8">
+        <h2 class="text-4xl font-bold text-white">An All-Round Plugin With Powerful Features</h2>
+        <p class="text-gray-400 mt-4">Whether you're a seasoned web designer or just starting out, Motion Art for Elementor seamlessly integrates with the Elementor platform, providing you with a seamless and intuitive experience.</p>
+    </div>
+
+    <!-- Three Cards Section -->
+    <div class="flex justify-center gap-10 mt-10">
+        <!-- Card 1 -->
+        <div class="card-transparent w-80 p-8 bg-black border-2 border-transparent hover:border-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img src="feature1-image.png" alt="Feature 1" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-2xl font-semibold text-white">Feature 1</h3>
+            <p class="text-gray-400 mt-2">A description of the first powerful feature, showing how it enhances the user experience.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-transparent w-80 p-8 bg-black border-2 border-transparent hover:border-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img src="feature2-image.png" alt="Feature 2" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-2xl font-semibold text-white">Feature 2</h3>
+            <p class="text-gray-400 mt-2">A description of the second feature that adds significant value to your website's performance.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-transparent w-80 p-8 bg-black border-2 border-transparent hover:border-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+            <img src="feature3-image.png" alt="Feature 3" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-2xl font-semibold text-white">Feature 3</h3>
+            <p class="text-gray-400 mt-2">An overview of the third feature that integrates smoothly with Elementor to provide more flexibility.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-center p-4 mt-10">
+        © 2025 Motion Art. All rights reserved.
+    </footer>
+
+</body>
+</html>
