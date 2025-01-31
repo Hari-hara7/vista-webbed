@@ -6,156 +6,172 @@
     <title>Motion Art</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Transparent Black Background */
-       /* Transparent Black Background */
        body {
-            background: rgba(0, 0, 0, 0.9); /* Pure black with 90% transparency */
-            color: white;
-           
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
         }
-
-        /* Mouse Glow Effect */
-        .glow-effect::before {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, rgba(0, 0, 0, 0) 80%);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            transition: transform 0.1s ease-out;
-        }
-
-        /* Hover Effect for Glowing */
-        .glow-effect:hover {
-            position: relative;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: rgba(30, 30, 30, 0.9); /* Slightly transparent black */
-            padding: 1rem;
-            display: flex;
-            justify-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10;
-        }
-
-        /* Rainbow Hover Effect */
-        .rainbow-hover {
-            background-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: rainbow 5s linear infinite;
-        }
-
-        /* Gradient Text */
-        .gradient-text {
-            background: linear-gradient(45deg, orange, purple, pink);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Hover Glow Effect */
-        .glow-effect:hover::before {
-            opacity: 1;
-            transform: scale(1.2);
-        }
-
-        /* Purchase Button */
-        .purchase-btn {
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            background: white;
-            color: black;
+        .header {
+            background-color: #000000;
             padding: 10px 20px;
-            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .logo {
+            font-size: 24px;
             font-weight: bold;
-            transition: transform 0.2s ease-in-out;
+            color: #FFFFFF;
         }
+        .header .buy-button {
+            background-color: #4CAF50;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px);
+            width: 80%;
+            margin: 0 auto;
+        }
+        .left-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .left-section .small-title {
+            font-size: 24px;
+            color: #FF8300;
+            margin-left: 20px;
+        }
+        .center-section {
+            flex: 2;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .center-section .large-title {
+            font-size: 64px;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .center-section .large-title span {
+            background: linear-gradient(to right, #FF8300, #6A5ACD);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .center-section .description {
+            font-size: 20px;
+            color: #AAAAAA;
+            max-width: 700px;
+        }
+        .center-section {
+    position: relative; /* This ensures the button is positioned relative to this container */
+}
 
-        .purchase-btn:hover {
-            transform: scale(1.1);
-        }
+.center-section .button-secondary {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: #FFFFFF;
+    color: #1E1E2D;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 10; /* Ensures the button stays on top of other elements */
+}
 
-        /* Right Corner Logo */
-        .logo-right {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-        }
+     
     </style>
 </head>
 <body class="text-white">
 
-    <!-- Navbar -->
-    <nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full top-0 z-10">
-        <img src="logo.png" alt="Logo" class="w-20">
-        <button class="bg-green-500 px-4 py-2 rounded-md">Action</button>
-    </nav>
+<!-- Navbar -->
+<nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full top-0 z-10">
+    <!-- Logo Text Instead of Image -->
+    <h1 class="text-white text-2xl font-bold">envato market</h1>
+
+    <!-- Buy Now Button -->
+    <button class="bg-green-500 px-4 py-2 rounded-md">Buy Now</button>
+</nav>
 
 
 
 
-<!-- Main Section -->
-<section class="glow-effect flex flex-col justify-center min-h-screen p-10 relative">
 
-    <!-- Logo and Purchase Now Button -->
-    <img src="logo.png" alt="Logo" class="absolute top-5 left-5 w-24 h-24">
-    <a href="#" class="absolute top-5 right-5 bg-white text-black py-2 px-4 rounded-md text-lg">Purchase Now</a>
-
-    <div class="grid grid-cols-2 gap-10">
-        <!-- Left Side Content (Now the "Transform Your Website") -->
-        <div class="text-left">
-            <h2 class="text-3xl font-bold gradient-text">Transform Your Website</h2>
-            <p class="text-white mt-2">With Motion Art Effect</p>
+    <div class="header">
+        <div class="logo">MotionArt Effect</div>
+        <a href="#" class="buy-button">Buy Now</a>
+    </div>
+    <div class="container">
+        <div class="left-section">
+            <div class="small-title">Transform Your Website</div>
+            <!-- Add the new text below -->
+          
         </div>
-
-        <!-- Right Side Content (Now the "Attract Your Visitors Attention With Colorful") -->
-        <div class="flex flex-col justify-center items-start ml-20">
-            <h1 class="text-4xl font-bold rainbow-hover">Attract Your Visitors Attention With Colorful</h1>
-            <h2 class="gradient-text text-xl mt-4">Motion Art Effect</h2>
-            <p class="text-white mt-2">Unleash the power of creativity with Motion Art for Elementor - your ultimate solution for seamlessly integrating captivating animations into your website.</p>
-           
-        </div>
-
         
-        <p class="text-white ml-2 text-center mx-auto">Trusted by thousands of users around the world</p>
+        <div class="center-section">
+            <a href="#" class="button-secondary">Purchase Now</a>
+            <div class="large-title">
+                Attract Your Visitors Attention<br>
+                With Colorful <span>Motion Art Effect</span>
+            </div>
+            <div class="description">
+                Unleash the power of creativity with Motion Art for Elementor - your ultimate solution for seamlessly integrating captivating animations into your website.
+            </div>
+        </div>
     </div>
 
-</section>
 
-
-
-<section class="flex justify-center items-center gap-10 p-10 flex-wrap">
+<!-- Image Section -->
+<section class="flex justify-center items-center gap-12 p-20 bg-black">
     <!-- Image 1 -->
     <div class="text-center space-y-4">
-        <img src="motionarteffect-img2.png" alt="Main Image" class="w-48">
-        <img src="motionarteffect-img4.png" alt="Main Image" class="w-48">
-        <p class="text-white mt-2">Description for Main Image</p>
+        <div class="flex justify-center items-center gap-4">
+            <!-- First Image in the Card -->
+            <img src="motionarteffect-img2.png" alt="Main Image 1" class="w-28 h-auto rounded-xl shadow-lg hover:scale-110 transition-all duration-300">
+            
+            <!-- Second Image in the Card -->
+            <img src="motionarteffect-img4.png" alt="Secondary Image 1" class="w-28 h-auto rounded-xl shadow-lg hover:scale-110 transition-all duration-300">
+        </div>
+        <p class="text-white mt-4">4.5 Score, 9 Reviews</p>
     </div>
-
-    <!-- Image 2 -->
     <div class="text-center space-y-4">
-        <img src="motionarteffect-img1.png" alt="Image 2" class="w-32">
-        <img src="motionarteffect-img4.png" alt="Main Image" class="w-48">
-        <p class="text-white mt-2">Description for Image 2</p>
+        <div class="flex justify-center items-center gap-4">
+            <!-- First Image in the Card -->
+            <img src="motionarteffect-img1.png" alt="Main Image 1" class="w-28 h-auto rounded-xl shadow-lg hover:scale-110 transition-all duration-300">
+            
+            <!-- Second Image in the Card -->
+            <img src="motionarteffect-img4.png" alt="Secondary Image 1" class="w-28 h-auto rounded-xl shadow-lg hover:scale-110 transition-all duration-300">
+        </div>
+        <p class="text-white mt-4">4.5 Score, 9 Reviews</p>
     </div>
-
-    <!-- Image 3 -->
+    
     <div class="text-center space-y-4">
-        <img src="motionarteffect-img3.png" alt="Image 3" class="w-32">
-        <img src="motionarteffect-img4.png" alt="Main Image" class="w-48">
-        <p class="text-white mt-2">Description for Image 3</p>
+        <div class="flex justify-center items-center gap-4">
+            <!-- First Image in the Card -->
+            <img src="motionarteffect-img3.png" alt="Main Image 1" class="w-28 h-auto rounded-xl shadow-lg hover:scale-110 transition-all duration-300">
+            
+            <!-- Second Image in the Card -->
+            <img src="motionarteffect-img4.png" alt="Secondary Image 1" class="w-28 h-auto rounded-xl shadow-lg hover:scale-110 transition-all duration-300">
+        </div>
+        <p class="text-white mt-4">4.5 Score, 9 Reviews</p>
     </div>
+    
+ 
+    
 </section>
+
 
 
 <!-- Section with Text and Image -->
@@ -220,25 +236,21 @@
 
 
 
-  <!-- Browser Support Section -->
+ <!-- Browser Support Section -->
 <section class="text-center p-10 bg-black">
-    <div class="card-transparent mx-auto w-80 mb-8">
+    <!-- Card with Black Background and White Border -->
+    <div class="mx-auto w-full max-w-4xl p-10 bg-black border-4 border-white rounded-lg shadow-lg">
         <h3 class="text-3xl font-bold text-white">Supported by All Popular Browsers</h3>
         <p class="text-gray-400 mt-2">Rest assured, Motion Art is designed to be compatible with all major web browsers.</p>
-    </div>
 
-    <!-- Image Row -->
-    <div class="flex justify-center gap-10 mt-8">
-        <!-- Image 1 -->
-        <img src="chrome-logo.png" alt="Chrome" class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-all duration-300">
-
-        <!-- Image 2 -->
-        <img src="firefox-logo.png" alt="Firefox" class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-all duration-300">
-
-        <!-- Image 3 -->
-        <img src="safari-logo.png" alt="Safari" class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-all duration-300">
+        <!-- Image Row -->
+        <div class="flex justify-center mt-10">
+            <!-- Image -->
+            <img src="motionarteffect-img8 (1).png" alt="Chrome" class="w-auto h-auto max-w-xs max-h-xs rounded-full shadow-2xl hover:scale-110 transition-all duration-300">
+        </div>
     </div>
 </section>
+
 
 <!-- All-Round Plugin Section -->
 <section class="text-center p-10 bg-black">
@@ -252,31 +264,37 @@
     <div class="flex justify-center gap-10 mt-10">
         <!-- Card 1 -->
         <div class="card-transparent w-80 p-8 bg-black border-2 border-transparent hover:border-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-            <img src="feature1-image.png" alt="Feature 1" class="w-full h-48 object-cover rounded-md mb-4">
+            <img src="motionarteffect-img9.png" alt="Feature 1" class="w-full h-48 object-cover rounded-md mb-4">
             <h3 class="text-2xl font-semibold text-white">Feature 1</h3>
             <p class="text-gray-400 mt-2">A description of the first powerful feature, showing how it enhances the user experience.</p>
         </div>
 
         <!-- Card 2 -->
         <div class="card-transparent w-80 p-8 bg-black border-2 border-transparent hover:border-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-            <img src="feature2-image.png" alt="Feature 2" class="w-full h-48 object-cover rounded-md mb-4">
+            <img src="motionarteffect-img6.png" alt="Feature 2" class="w-full h-48 object-cover rounded-md mb-4">
             <h3 class="text-2xl font-semibold text-white">Feature 2</h3>
             <p class="text-gray-400 mt-2">A description of the second feature that adds significant value to your website's performance.</p>
         </div>
 
         <!-- Card 3 -->
         <div class="card-transparent w-80 p-8 bg-black border-2 border-transparent hover:border-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-            <img src="feature3-image.png" alt="Feature 3" class="w-full h-48 object-cover rounded-md mb-4">
+            <img src="motionarteffect-img7.png" alt="Feature 3" class="w-full h-48 object-cover rounded-md mb-4">
             <h3 class="text-2xl font-semibold text-white">Feature 3</h3>
             <p class="text-gray-400 mt-2">An overview of the third feature that integrates smoothly with Elementor to provide more flexibility.</p>
         </div>
     </div>
 </section>
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-center p-4 mt-10">
+    <div class="flex justify-center space-x-8 mb-4">
+        <a href="#documentation" class="text-white hover:text-gray-300">Documentation</a>
+        <a href="#support" class="text-white hover:text-gray-300">Support</a>
+    </div>
+    <p class="text-white">© 2025 Motion Art. All rights reserved.</p>
+</footer>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-center p-4 mt-10">
-        © 2025 Motion Art. All rights reserved.
-    </footer>
+
 
 </body>
 </html>
