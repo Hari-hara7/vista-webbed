@@ -90,12 +90,61 @@
     border-radius: 5px;
     z-index: 10; /* Ensures the button stays on top of other elements */
 }
+.button-secondary {
+    position: absolute;
+    top: 100px; /* Moves it slightly down */
+    right: 0;
+    padding: 10px 20px;
+    background-color: #FFFFFF;
+    color: #1E1E2D;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 10; /* Ensures the button stays on top of other elements */
+}
+.logo-top {
+    position: absolute;
+    top: 100px; /* Same as .button-secondary */
+    left: 0; /* Align to the left */
+    width: 180px; /* Adjust as needed */
+    height: 80px;
+    z-index: 10;
+}
+.text {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(to right, #FF8300, #6A5ACD, #00C9A7); 
+    -webkit-background-clip: text;
+    color: transparent; /* Makes the gradient visible inside the text */
+    margin-left: 20px;
+}
+
+/* Custom Cursor */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 136, 0, 0.7), rgba(255, 0, 136, 0.2));
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out, width 0.2s ease-out, height 0.2s ease-out;
+    mix-blend-mode: difference; /* Creates a glowing effect */
+    z-index: 1000;
+}
+
+/* Enlarged cursor when hovering */
+.hover-effect {
+    width: 40px !important;
+    height: 40px !important;
+    box-shadow: 0 0 20px rgba(255, 136, 0, 0.8);
+}
 
      
     </style>
 </head>
 <body class="text-white">
-
+  
 <!-- Navbar -->
 <nav class="bg-gray-900 p-4 flex justify-between items-center fixed w-full top-0 z-10">
     <!-- Logo Text Instead of Image -->
@@ -106,7 +155,7 @@
 </nav>
 
 
-
+<div class="cursor"></div>
 
 
     <div class="header">
@@ -115,13 +164,17 @@
     </div>
     <div class="container">
         <div class="left-section">
-            <div class="small-title">Transform Your Website</div>
+            <div class="text">Transform Your Website</div>
             <!-- Add the new text below -->
           
         </div>
+        <div>
+            <img src="MotionArtEffect-logo.png" alt="Logo" class="logo-top">
+            <a href="#" class="button-secondary">Purchase Now</a>
+        </div>
         
         <div class="center-section">
-            <a href="#" class="button-secondary">Purchase Now</a>
+           
             <div class="large-title">
                 Attract Your Visitors Attention<br>
                 With Colorful <span>Motion Art Effect</span>
@@ -283,6 +336,7 @@
             <p class="text-gray-400 mt-2">An overview of the third feature that integrates smoothly with Elementor to provide more flexibility.</p>
         </div>
     </div>
+
 </section>
 <!-- Footer -->
 <!-- Footer -->
@@ -293,6 +347,25 @@
     </div>
     <p class="text-white">© 2025 Motion Art. All rights reserved.</p>
 </footer>
+
+<script>
+    const cursor = document.querySelector(".cursor");
+
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
+
+    document.querySelectorAll("a, button, .large-title, .text, .buy-button").forEach((element) => {
+        element.addEventListener("mouseenter", () => {
+            cursor.classList.add("hover-effect");
+        });
+
+        element.addEventListener("mouseleave", () => {
+            cursor.classList.remove("hover-effect");
+        });
+    });
+</script>
 
 
 
